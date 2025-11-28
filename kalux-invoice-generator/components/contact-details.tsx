@@ -1,0 +1,44 @@
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+import {Label} from "@/components/ui/label"
+import {Input} from "@/components/ui/input"
+export default function ContactDetails() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Customer Contact Details</CardTitle>
+      </CardHeader>
+      <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <Label htmlFor="customerFullame"> Fullname</Label>
+          <Input id="customerFullame" placeholder="Hans Muster"></Input>
+        </div>
+        <div>
+          <Label htmlFor="customerEmail">E-Mail</Label>
+          <Input id="CustomerEmail" placeholder="your@email.com" type="email"></Input>
+        </div>
+        <div>
+          <Label htmlFor="customerStreet">Street</Label>
+          <Input id="CustomerStreet" placeholder="Musterstrasse" type="text"></Input>
+        </div>
+          <div>
+          <Label htmlFor="customerStreetNR">No.</Label>
+          <Input id="CustomerStreetNr" placeholder="1e" type="text"></Input>
+        </div>
+        <div>
+          <Label htmlFor="customerPLZ">PLZ</Label>
+          <Input id="CustomerPLZ" placeholder="8560" type="number" max={9999} min={1000}></Input>
+        </div>
+         <div>
+          <Label htmlFor="customerLocation">Location</Label>
+          <Input id="CustomerLocation" placeholder="Märstetten" type="text"></Input>
+        </div>
+      </CardContent>
+    </Card>
+  )
+}
