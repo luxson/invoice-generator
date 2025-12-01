@@ -1,19 +1,17 @@
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
 
 import {Label} from "@/components/ui/label"
 import {Input} from "@/components/ui/input"
-import {Button} from "@/components/ui/button"
+import { useInvoice } from "@/context/invoice-context"
 
 
 export default function BasicDetails() {
+  const {invoice, updateInvoice} = useInvoice();
   return (
     <Card>
       <CardHeader>
@@ -22,11 +20,15 @@ export default function BasicDetails() {
       <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <Label htmlFor="invoiceNumber"> Invoice Number</Label>
-          <Input id="invoiceNumber" placeholder="KL-" prefix="KL-"></Input>
+          <Input id="invoiceNumber" 
+          value={invoice.invoiceNumber} placeholder="KL-" prefix="KL-"
+          onChange={(e) => updateInvoice({invoiceNumber: e.target.value })}
+          ></Input>
         </div>
         <div>
           <Label htmlFor="invoiceDate">Date</Label>
-          <Input id="invoiceDate" type="date"></Input>
+          <Input id="invoiceDate" type="date" value={invoice.date}
+           onChange={(e) => updateInvoice({date: e.target.value })}></Input>
         </div>
       </CardContent>
     </Card>

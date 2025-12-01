@@ -4,17 +4,7 @@ import { Button } from './ui/button';
 import { Plus } from 'lucide-react';
 import InvoiceItem from './invoice-item';
 
-type ItemMode = "quantity" | "hourly";
 
-interface InvoiceItem {
-  id: string;
-  description: string;
-  mode: ItemMode;
-  quantity?: number;    // used when mode = "quantity"
-  hours?: number;       // used when mode = "hourly"
-  rate: number;
-  price: number;
-}
 //Array as an example for items
 const items = [
   { id: "1", description: "Item 1", mode:"quantity", quantity: 2, rate: 120 , price: 10.0 },

@@ -13,7 +13,7 @@ export default function InvoiceItem() {
         </div>
         <div className="col-span-2">
             <Label>Quantity/Hours</Label>
-            <Input type="number" min={1}></Input>
+            <Input type="string" min={1}></Input>
         </div>
         <div className="col-span-2">
             <Label>Rate (CHF)</Label>
