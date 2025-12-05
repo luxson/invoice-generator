@@ -4,11 +4,7 @@ import { Download } from 'lucide-react'
 import { Card, CardContent } from './ui/card'
 import { InvoiceItem } from '@/types/invoice';
 
-//Array as an example for items
-const items = [
-  { id: "1", description: "Item 1", mode:"quantity", quantity: 2, rate: 120 , price: 10.0 },
-  { id: "2", description: "Item 2", mode:"hourly", hours: 1, rate: 120 , price: 20.0 },
-] as const satisfies InvoiceItem[];
+
 export default function InvoicePreview() {
   return (
     <div className='min-h-screen bg-gray-50 p-4'>
