@@ -11,9 +11,11 @@ export default function Home() {
   //variable for showing preview-function
   const [showPreview, setShowPreview] = useState(false);
 
-  if(showPreview){
-    return <InvoicePreview/>;
+  if(showPreview)
+  {
+    return <InvoicePreview onBack={() => setShowPreview(false)}/>;
   }
+
   return (
    <div className="min-h-screen bg-gray-50 p-4">
     <div className="max-w-4xl mx-auto"> 
